@@ -46,7 +46,7 @@ def main():
               f"picked {log.get('picked', '-')}, ${rows[i]['cost']:.4f})")
         print(f"  answer: {out.answer[:160]}")
         for c in log.get("candidates", []):
-            print(f"  {c['name']:7} {c['supported']:6} use {c['useful']}  on {c.get('on_target')}  {c['answer'][:80]!r}")
+            print(f"  {c['name']:7} {c['supported']:6} use {c['useful']}  on {c.get('on_target')}  {c['answer'][:70]!r}")
         for r in log.get("retries", []):
             print(f"  retry: {r['query']!r} -> {r['found']} new, kept {r['kept']}")
     (RESULTS / "phase3_smoke.json").write_text(json.dumps(rows, indent=2, ensure_ascii=False))

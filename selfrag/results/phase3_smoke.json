@@ -2,24 +2,40 @@
   "chain-02": {
     "base": 0.0,
     "now": 0.0,
-    "answer": "The stadium that hosted the 2011 Cricket World Cup final took five years to build and officially opened on 24 February 2020 [1][7].",
-    "cost": 0.0073662,
-    "retries": [],
-    "picked": "A_all",
-    "good": true,
+    "answer": "I don't know based on the provided documents.",
+    "cost": 0.0083574,
+    "critic_cost": 0.0203275,
+    "critic_tokens": [
+      20638,
+      7584
+    ],
+    "retries": [
+      {
+        "query": "\"2011 Cricket World Cup final stadium construction duration and opening date\"",
+        "found": 3,
+        "scores": [
+          5,
+          5,
+          10
+        ],
+        "kept": 3
+      }
+    ],
+    "picked": "A2",
+    "good": false,
     "candidates": [
       {
         "name": "A_all",
-        "supported": "full",
-        "useful": 5,
-        "missing": "",
-        "target": "{'event': '2011 Cricket World Cup final', 'year': 2011, 'team': 'India', 'ground': 'Narendra Modi Stadium'}",
+        "supported": "no",
+        "useful": 1,
+        "missing": "construction duration and opening date for Wankhede Stadium",
+        "target": "2011 Cricket World Cup final (2 April 2011) — India v Sri Lanka at Wankhede Stadium, Mumbai; player (man of the match): MS Dhoni",
         "on_target": [
-          1,
           3,
           4,
           10,
-          11
+          11,
+          12
         ],
         "answer": "The stadium that hosted the 2011 Cricket World Cup final took five years to build and officially opened on 24 February 2020 [1][7]."
       },
@@ -27,9 +43,10 @@
         "name": "A1",
         "supported": "no",
         "useful": 1,
-        "missing": "opening date of the stadium",
-        "target": "{'event': '2011 Cricket World Cup final', 'year': 2011, 'team': 'India', 'ground': 'Wankhede Stadium'}",
+        "missing": "The construction duration and opening date for Wankhede Stadium (the actual stadium that hosted the 2011 final)",
+        "target": "2011 Cricket World Cup final (2 April 2011) — India v Sri Lanka; player of the match: MS Dhoni; ground: Wankhede Stadium, Mumbai",
         "on_target": [
+          2,
           3,
           4,
           10,
@@ -136,46 +153,122 @@
         "target": null,
         "on_target": null,
         "answer": "I don't know based on the provided documents."
+      },
+      {
+        "name": "A_allr1",
+        "supported": "no",
+        "useful": 1,
+        "missing": "Correct construction time and opening date for Wankhede Stadium (e.g. ~13 months to build; opened 1974/early 1975)",
+        "target": "2011 Cricket World Cup final (2 April 2011) — Sri Lanka v India — ground: Wankhede Stadium, Mumbai — player: (none specified)",
+        "on_target": [
+          3,
+          4,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "answer": "The stadium that hosted the 2011 Cricket World Cup final, the Narendra Modi Stadium, took five years to build and officially opened on 24 February 2020 [1][7]."
+      },
+      {
+        "name": "A1r1",
+        "supported": "partly",
+        "useful": 3,
+        "missing": "construction duration (on-target excerpt 15 states ~13 months) and clarification on opening year (excerpts 13 and 15 conflict: 1974 vs 1975)",
+        "target": "2011 Cricket World Cup final (2 April 2011), Sri Lanka v India, Wankhede Stadium, Mumbai",
+        "on_target": [
+          3,
+          4,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "answer": "The Wankhede Stadium, which hosted the 2011 Cricket World Cup final, opened in 1974. The construction duration is not specified in the provided documents."
+      },
+      {
+        "name": "A2r1",
+        "supported": "full",
+        "useful": 1,
+        "missing": "How long did it take to build the stadium that hosted the 2011 Cricket World Cup final, and when did it open?",
+        "target": null,
+        "on_target": null,
+        "answer": "I don't know based on the provided documents."
+      },
+      {
+        "name": "A3r1",
+        "supported": "partly",
+        "useful": 4,
+        "missing": "precise opening year/date (on-target excerpts conflict: one says 'opened 1974', another says 'opened in time for the final Test in 1975')",
+        "target": "2011 Cricket World Cup final (2 April 2011) — Sri Lanka v India — (man of the match: MS Dhoni) — Wankhede Stadium, Mumbai",
+        "on_target": [
+          2,
+          3,
+          4,
+          5,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "answer": "It took approximately 13 months to build Wankhede Stadium, which opened in time for the final Test between India and the West Indies in 1975 [1]."
       }
     ]
   },
   "trap-05": {
     "base": 0.0,
     "now": 0.0,
-    "answer": "The highest individual Test score by an Indian batter against England is 235 runs, made by Virat Kohli during the 4th Test at Wankhede Stadium, Mumbai, in December 2016 [3].",
-    "cost": 0.0071025,
+    "answer": "The highest individual Test score by an Indian batter against England is 235, made by Virat Kohli [1].",
+    "cost": 0.0043992,
+    "critic_cost": 0.032395,
+    "critic_tokens": [
+      15932,
+      14206
+    ],
     "retries": [],
-    "picked": "A_all",
+    "picked": "A3",
     "good": true,
     "candidates": [
       {
         "name": "A_all",
-        "supported": "full",
-        "useful": 5,
-        "missing": "",
-        "target": "{'match': '4th Test', 'year': '2016', 'team': 'India', 'player': 'Virat Kohli', 'ground': 'Wankhede Stadium, Mumbai'}",
+        "supported": "partly",
+        "useful": 3,
+        "missing": "A later higher score: Shubman Gill 269 for India v England at Edgbaston (2nd Test, 2–6 July 2025) which supersedes 235",
+        "target": "Overall Test matches between India and England (all years) — the highest individual Test score by an Indian batter against England (asking for the score and the player; no single ground or year specified)",
         "on_target": [
-          3
+          1,
+          3,
+          4,
+          7
         ],
         "answer": "The highest individual Test score by an Indian batter against England is 235 runs, made by Virat Kohli during the 4th Test at Wankhede Stadium, Mumbai, in December 2016 [3]."
       },
       {
         "name": "A1",
-        "supported": "full",
-        "useful": 5,
-        "missing": "",
-        "target": "{'match': '2nd Test', 'year': 2025, 'team': 'India', 'player': 'Shubman Gill', 'ground': 'Edgbaston, Birmingham'}",
+        "supported": "partly",
+        "useful": 2,
+        "missing": "Proof that no Indian score exceeds 269 — excerpts show Karun Nair's 303* (Chennai, Dec 2016), which would be higher than 269.",
+        "target": "Overall highest individual Test score by an Indian batter against England (i.e. across all India v England Test matches). Relevant on-target matches in the excerpts: Karun Nair 303* (India v England, 5th Test, 16–20 Dec 2016, M. A. Chidambaram Stadium, Chennai); Virat Kohli 235 (India v England, 4th Test, 8–12 Dec 2016, Wankhede, Mumbai); Shubman Gill 269 (India v England, 2nd Test, 2–6 July 2025, Edgbaston, Birmingham).",
         "on_target": [
-          1
+          1,
+          2,
+          3,
+          4
         ],
         "answer": "The highest individual Test score by an Indian batter against England is 269, made by Shubman Gill during the 2nd Test at Edgbaston, Birmingham, from 2–6 July 2025 [1]."
       },
       {
         "name": "A2",
-        "supported": "full",
+        "supported": "partly",
         "useful": 5,
-        "missing": "",
-        "target": "{'match': '5th Test', 'year': '2016', 'team': 'India', 'player': 'Karun Nair', 'ground': 'M. A. Chidambaram Stadium, Chennai'}",
+        "missing": "An on-target excerpt explicitly stating that 303* by Karun Nair is the highest individual Test score by an Indian against England.",
+        "target": "Highest individual Test score by an Indian batter against England — Karun Nair's 303* in the 5th Test, England tour of India 2016–17, 16–20 December 2016, M. A. Chidambaram Stadium, Chennai.",
         "on_target": [
           2,
           4
@@ -187,20 +280,21 @@
         "supported": "full",
         "useful": 5,
         "missing": "",
-        "target": "{'match': 'India v England', 'year': 2016, 'team': 'India', 'player': 'Virat Kohli', 'ground': 'Wankhede Stadium'}",
+        "target": "Highest individual Test score by an Indian batter against England — (Series: English cricket team in India, 2016–17; Match: 4th Test, Wankhede Stadium, Mumbai, Dec 2016; Team: India v England; Player asked: Indian batter and the ground: Wankhede Stadium)",
         "on_target": [
           3,
           4,
+          6,
           7
         ],
         "answer": "The highest individual Test score by an Indian batter against England is 235, made by Virat Kohli [1]."
       },
       {
         "name": "A4",
-        "supported": "full",
-        "useful": 5,
-        "missing": "",
-        "target": "{'match': 'fifth Test', 'year': '2016', 'team': 'India', 'player': 'Karun Nair', 'ground': 'M. A. Chidambaram Stadium'}",
+        "supported": "partly",
+        "useful": 4,
+        "missing": "An explicit excerpt stating that 303* is the highest individual Test score by an Indian against England",
+        "target": "5th Test, England v India, 16–20 December 2016 (English cricket team in India 2016–17) — Team: India — Player: Karun Nair — Ground: M. A. Chidambaram Stadium, Chennai",
         "on_target": [
           2,
           4
@@ -221,10 +315,11 @@
         "supported": "full",
         "useful": 5,
         "missing": "",
-        "target": "{'match': 'India v England', 'year': '2016–17', 'team': 'India', 'player': 'Virat Kohli', 'ground': 'Wankhede Stadium'}",
+        "target": "Highest individual Test score by an Indian batter against England — Virat Kohli's 235 at Wankhede Stadium, Mumbai in the England tour of India 2016–17 (4th Test, 8–12 December 2016).",
         "on_target": [
           3,
           4,
+          6,
           7
         ],
         "answer": "The highest individual Test score by an Indian batter against England is Virat Kohli's 235, made in the 2016–17 season at the Wankhede Stadium [1]."
@@ -262,7 +357,12 @@
     "base": 0.0,
     "now": 0.0,
     "answer": "Steve Smith scored 121 runs in the 2021 World Test Championship final against India [1].",
-    "cost": 0.0030288000000000003,
+    "cost": 0.0020088,
+    "critic_cost": 0.00989225,
+    "critic_tokens": [
+      5801,
+      4221
+    ],
     "retries": [],
     "picked": "A_all",
     "good": true,
@@ -272,9 +372,10 @@
         "supported": "full",
         "useful": 5,
         "missing": "",
-        "target": "{'match': '2021 World Test Championship final', 'year': 2023, 'team': 'Australia', 'player': 'Steve Smith', 'ground': 'The Oval'}",
+        "target": "ICC World Test Championship Final (2021–2023 cycle), played 7–11 June 2023: Australia v India at The Oval, London — player: Steve Smith",
         "on_target": [
           1,
+          2,
           3
         ],
         "answer": "Steve Smith scored 121 runs in the 2021 World Test Championship final against India [1]."
@@ -284,9 +385,10 @@
         "supported": "full",
         "useful": 5,
         "missing": "",
-        "target": "{'match': '2021 World Test Championship final', 'year': 2023, 'team': 'Australia', 'player': 'Steve Smith', 'ground': 'The Oval'}",
+        "target": "2021–2023 ICC World Test Championship final (7–11 June 2023), Australia v India at The Oval — player: Steve Smith (Australia)",
         "on_target": [
           1,
+          2,
           3
         ],
         "answer": "Steve Smith scored 121 runs in the 2021 World Test Championship final [1]."
@@ -305,9 +407,10 @@
         "supported": "full",
         "useful": 5,
         "missing": "",
-        "target": "{'match': '2021 World Test Championship final', 'year': 2023, 'team': 'Australia', 'player': 'Steve Smith', 'ground': 'The Oval'}",
+        "target": "2021–2023 ICC World Test Championship final (7–11 June 2023), Australia v India at The Oval — player: Steve Smith (Australia)",
         "on_target": [
           1,
+          2,
           3
         ],
         "answer": "Steve Smith scored 121 runs in the 2021 World Test Championship final [1]."
@@ -337,6 +440,11 @@
     "now": 0.0,
     "answer": "I don't know based on the provided documents.",
     "cost": 0.00369435,
+    "critic_cost": 0.0,
+    "critic_tokens": [
+      0,
+      0
+    ],
     "retries": [
       {
         "query": "\"best bowling figures IPL history record holder\"",
@@ -412,6 +520,7 @@
     "now": 1.0,
     "answer": "Darren Sammy captained the West Indies when they won the 2012 World Twenty20.",
     "cost": 8.295e-05,
+    "critic_cost": 0.0,
     "sure": "sure"
   }
 }
